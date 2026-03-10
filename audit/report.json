@@ -1,0 +1,82 @@
+[
+  {
+    "route": "/",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-home.png"
+  },
+  {
+    "route": "/services",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-services.png"
+  },
+  {
+    "route": "/industries",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-industries.png"
+  },
+  {
+    "route": "/products",
+    "status": 200,
+    "title": "SaaS Products | MyBooking | MyBooking Technologies",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-products.png"
+  },
+  {
+    "route": "/portfolio",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-portfolio.png"
+  },
+  {
+    "route": "/pricing",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-pricing.png"
+  },
+  {
+    "route": "/blog",
+    "status": 200,
+    "title": "Blog & Insights | MyBooking Technologies",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-blog.png"
+  },
+  {
+    "route": "/about",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-about.png"
+  },
+  {
+    "route": "/contact",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-contact.png"
+  },
+  {
+    "route": "/dashboard",
+    "status": 200,
+    "title": "MyBooking Technologies Private Limited",
+    "blankPage": false,
+    "consoleErrors": 0,
+    "screenshot": "audit-dashboard.png"
+  }
+]

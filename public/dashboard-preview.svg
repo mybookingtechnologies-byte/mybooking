@@ -1,0 +1,21 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dash-bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="dash-card" x1="0" y1="0" x2="330" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E66F5"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="22" fill="url(#dash-bg)"/>
+  <rect x="28" y="28" width="904" height="70" rx="14" fill="#334155"/>
+  <rect x="44" y="46" width="180" height="34" rx="10" fill="#475569"/>
+  <rect x="28" y="120" width="240" height="452" rx="18" fill="#1e293b"/>
+  <rect x="290" y="120" width="642" height="220" rx="18" fill="url(#dash-card)"/>
+  <rect x="290" y="360" width="306" height="212" rx="18" fill="#334155"/>
+  <rect x="626" y="360" width="306" height="212" rx="18" fill="#334155"/>
+  <text x="328" y="192" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">MyBooking Dashboard</text>
+  <text x="328" y="236" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="18">Operations, analytics, and workflow automation in one view.</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mb-gradient" x1="6" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E66F5"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#mb-gradient)"/>
+  <path d="M18 42V22H26.2L31.5 30.1L36.8 22H45V42H38.5V33L31.5 43L24.5 33V42H18Z" fill="white"/>
+  <text x="72" y="29" font-family="'Space Grotesk', Arial, sans-serif" font-size="19" font-weight="700" fill="#0F172A">MyBooking</text>
+  <text x="72" y="48" font-family="'Manrope', Arial, sans-serif" font-size="14" font-weight="600" fill="#334155">Technologies</text>
+</svg>
