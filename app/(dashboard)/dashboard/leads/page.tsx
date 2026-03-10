@@ -14,17 +14,22 @@ export default async function LeadsPage({
 
   const query = searchParams.q || "";
 
-  const leads = await prisma.lead.findMany({
-    where: {
-      organizationId: activeOrgId,
-      OR: [
-        { name: { contains: query, mode: "insensitive" } },
-        { email: { contains: query, mode: "insensitive" } },
-        { businessType: { contains: query, mode: "insensitive" } },
-      ],
-    },
-    orderBy: { createdAt: "desc" },
-  });
+  let leads: any[] = [];
+  try {
+    leads = await prisma.lead.findMany({
+      where: {
+        organizationId: activeOrgId,
+        OR: [
+          { name: { contains: query, mode: "insensitive" } },
+          { email: { contains: query, mode: "insensitive" } },
+          { businessType: { contains: query, mode: "insensitive" } },
+        ],
+      },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.warn("Database connection issue when fetching leads:", error);
+  }
 
   return (
     <div className="space-y-6">

@@ -8,10 +8,15 @@ export default async function TeamPage() {
   const activeOrgId = await getActiveOrganizationId();
   if (!activeOrgId) redirect("/dashboard/organizations");
 
-  const members = await prisma.membership.findMany({
-    where: { organizationId: activeOrgId },
-    include: { user: true },
-  });
+  let members: any[] = [];
+  try {
+    members = await prisma.membership.findMany({
+      where: { organizationId: activeOrgId },
+      include: { user: true },
+    });
+  } catch (error) {
+    console.error("Failed to fetch team members:", error);
+  }
 
   return (
     <div className="space-y-6">
@@ -34,16 +39,24 @@ export default async function TeamPage() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
-            {members.map((member: any) => (
-              <tr key={member.id}>
-                <td className="px-6 py-4 font-medium text-slate-900">{member.user.email}</td>
-                <td className="px-6 py-4">{member.role}</td>
-                <td className="px-6 py-4 text-slate-500">{new Date(member.createdAt).toLocaleDateString()}</td>
-                <td className="px-6 py-4 text-right">
-                  <Button variant="ghost">Edit</Button>
+            {members.length > 0 ? (
+              members.map((member: any) => (
+                <tr key={member.id}>
+                  <td className="px-6 py-4 font-medium text-slate-900">{member.user.email}</td>
+                  <td className="px-6 py-4">{member.role}</td>
+                  <td className="px-6 py-4 text-slate-500">{new Date(member.createdAt).toLocaleDateString()}</td>
+                  <td className="px-6 py-4 text-right">
+                    <Button variant="ghost">Edit</Button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={4} className="px-6 py-20 text-center text-slate-500 italic">
+                  No team members found or database connection error.
                 </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </Card>

@@ -3,22 +3,33 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await prisma.blog.findFirst({
-    where: { slug: params.slug }
-  });
+  try {
+    const post = await prisma.blog.findFirst({
+      where: { slug: params.slug }
+    });
 
-  if (!post) return {};
+    if (!post) return {};
 
-  return {
-    title: post.title,
-    description: post.excerpt || "",
-  };
+    return {
+      title: post.title,
+      description: post.excerpt || "",
+    };
+  } catch (error) {
+    console.warn("Failed to generate metadata for blog post at build time:", error);
+    return { title: "Blog Post" };
+  }
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await prisma.blog.findFirst({
-    where: { slug: params.slug }
-  });
+  let post = null;
+
+  try {
+    post = await prisma.blog.findFirst({
+      where: { slug: params.slug }
+    });
+  } catch (error) {
+    console.error("Failed to fetch blog post at build time:", error);
+  }
 
   if (!post) notFound();
 
